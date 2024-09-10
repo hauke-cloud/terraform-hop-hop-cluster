@@ -71,34 +71,6 @@ For managing AWS infrastructure, ensure that the AWS CLI is installed and config
 - **Install the AWS CLI**: [AWS CLI Installation Guide](https://aws.amazon.com/cli/)
 - **Configure using AWS CLI**: Run `aws configure` if you haven't already.
 
-### 3. Required Environment Variables
-
-Make sure the following environment variables are set up for proper access:
-
-- **AWS_PROFILE**: The AWS profile that allows you to assume the appropriate AWS role and access the OpenTofu/Terraform S3 state bucket. Configure your AWS CLI profiles with the necessary role-assumption details in your `~/.aws/config` file.
-
-    ```bash
-    export AWS_PROFILE="your-aws-profile-name"
-    ```
-
-- **GITHUB_APP_ID**: The GitHub App ID used for managing the README and other repository settings.
-
-    ```bash
-    export GITHUB_APP_ID="your-github-app-id"
-    ```
-
-- **GITHUB_APP_INSTALLATION_ID**: The installation ID of the GitHub App for readme-management.
-
-    ```bash
-    export GITHUB_APP_INSTALLATION_ID="your-github-app-installation-id"
-    ```
-
-- **GITHUB_APP_PEM_FILE**: The private key (PEM) file path associated with your GitHub App.
-
-    ```bash
-    export GITHUB_APP_PEM_FILE="/path/to/your/github-app.pem"
-    ```
-
 
 
 ## :wrench: Configuration
@@ -141,38 +113,63 @@ This project is configured using the following files:
 
 
 ## :airplane: Usage
-Before deploying the Terraform code, you need to set up some environment
-variables. These variables are required for authenticating with AWS
-and GitHub. Follow the steps below:
+To run this terraform project simply follow the steps below:
 
-### 1. Initialize Terraform
+### 1. Initialize the projects
 
-Before applying the Terraform code, initialize the Terraform working directory:
+The `init`` command prepares your working directory for OpenTofu (or Terraform):
 
+***OpenTofu***
+```bash
+opentofu init
+```
+
+***Terraform (if using terraform)***
 ```bash
 terraform init
 ```
 
-### 2. Apply Terraform Configuration
+### 2. Plan the changes
 
-To deploy the infrastructure, use the following command:
+Use the `plan` command to see what changes will be made to your infrastructure:
 
+***OpenTofu***
+```bash
+openfotu plan
+```
+
+***Terraform (if using terraform)***
 ```bash
 terraform apply
 ```
 
-This command will read the configuration settings from the `terraform.tfvars`
-file and provision the resources in your AWS account.3
+### 3. Apply the changes
 
-### 3. Destroy Terraform Resources (Optional)
+The `apply` command will apply the changes to your infrastructure:
 
-If you need to destroy the resources created by Terraform, you can use the following command:
+***OpenTofu***
+```bash
+opentofu apply
+```
 
+***Terraform (if using terraform)***
+```bash
+terraform apply
+```
+
+### (Optional) 4. Destroy the resources
+
+If you want to destroy the resources created by OpenTofu or Terraform, you can use the following command:
+
+***OpenTofu***
+```bash
+openfotu destroy
+```
+
+***Terraform (if using terraform)***
 ```bash
 terraform destroy
 ```
-
-This will remove all resources defined in the Terraform configuration from your AWS account.
 
 
 
