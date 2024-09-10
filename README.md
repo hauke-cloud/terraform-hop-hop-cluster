@@ -91,6 +91,7 @@ This project is configured using the following files:
    ```
 
   :bangbang: **IMPORTANT**: For a full list of variables, descriptions and default values, please check [this](resources/generated/terraform_settings.md) document.
+
 2. **Decrypt `secrets.enc.yaml`**:
 
    - Use SOPS to decrypt the secrets file before running any Terraform commands:
