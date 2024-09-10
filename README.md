@@ -143,25 +143,7 @@ Before deploying the Terraform code, you need to set up some environment
 variables. These variables are required for authenticating with AWS
 and GitHub. Follow the steps below:
 
-### 1. Set Environment Variables
-
-Set the following environment variables in your shell:
-
-```bash
-export AWS_ACCESS_KEY_ID=<your-aws-access-key-id>
-export AWS_SECRET_ACCESS_KEY=<your-aws-secret-access-key>
-export GITHUB_APP_ID=<your-github-app-id>
-export GITHUB_APP_INSTALLATION_ID=<your-github-app-installation-id>
-export GITHUB_APP_PEM_FILE=<path-to-your-github-app-pem-file>
-```
-
-### 2. Configure Terraform Variables (Optional)
-
-All the necessary configuration settings for Terraform are stored in the
-`terraform.tfvars` file. You should review and edit this file to match
-your environment and requirements before proceeding.
-
-### 3. Initialize Terraform
+### 1. Initialize Terraform
 
 Before applying the Terraform code, initialize the Terraform working directory:
 
@@ -169,7 +151,7 @@ Before applying the Terraform code, initialize the Terraform working directory:
 terraform init
 ```
 
-### 4. Apply Terraform Configuration
+### 2. Apply Terraform Configuration
 
 To deploy the infrastructure, use the following command:
 
@@ -178,9 +160,9 @@ terraform apply
 ```
 
 This command will read the configuration settings from the `terraform.tfvars`
-file and provision the resources in your AWS account.
+file and provision the resources in your AWS account.3
 
-### 5. Destroy Terraform Resources (Optional)
+### 3. Destroy Terraform Resources (Optional)
 
 If you need to destroy the resources created by Terraform, you can use the following command:
 
