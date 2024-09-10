@@ -16,7 +16,7 @@ Terraform module to create a Kubernetes cluster with hop-hop-cluster on Hetzner
 
 
 ## 🚀 Getting started
-To get started, you need to clone the repository containing this `README.md` file. Follow the steps below:
+To get started, you need to clone the repository. Follow the steps below:
 
 ### 1. Clone the repository
 
@@ -105,18 +105,20 @@ Make sure the following environment variables are set up for proper access:
 This project is configured using the following files:
 
 - `variables.tf`: Defines all the input variables required by the project.
-- `terraform.tf`: Contains values for the variables defined in `variables.tf`.
+- `terraform.tfvars`: Contains values for the variables defined in `variables.tf`.
 - `secrets.enc.yaml`: Encrypted secrets file managed by SOPS, containing sensitive data.
 
 ### Configuration Steps
 
-1. **Update `terraform.tf`**:
-   - Populate the `terraform.tf` file with values corresponding to the variables in `variables.tf`.
+1. **Update `terraform.tfvars`**:
+   - Populate the `terraform.tfvars` file with values corresponding to the variables in `variables.tf`.
 
    Example:
    ```hcl
    variable_name = "your_value"
    ```
+
+  :bangbang: **IMPORTANT**: For a full list of variables, descriptions and default values, please check [this](resources/generated/terraform_settings.md) document.
 2. **Decrypt `secrets.enc.yaml`**:
 
    - Use SOPS to decrypt the secrets file before running any Terraform commands:
